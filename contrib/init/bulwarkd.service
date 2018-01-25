@@ -1,0 +1,26 @@
+[Unit]
+Description=Nvidiacash's distributed currency daemon
+After=network.target
+
+[Service]
+User=nvidiacash
+Group=nvidiacash
+
+Type=forking
+PIDFile=/var/lib/nvidiacashd/nvidiacashd.pid
+
+ExecStart=/usr/bin/nvidiacashd -daemon -pid=/var/lib/nvidiacashd/nvidiacashd.pid \
+          -conf=/etc/nvidiacash/nvidiacash.conf -datadir=/var/lib/nvidiacashd
+
+ExecStop=-/usr/bin/nvidiacash-cli -conf=/etc/nvidiacash/nvidiacash.conf \
+         -datadir=/var/lib/nvidiacashd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

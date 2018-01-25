@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Nvidiacash
+Comment=Nvidiacash P2P Cryptocurrency
+Comment[fr]=Nvidiacash, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Nvidiacash, eşten eşe kriptografik sanal para birimi
+Exec=nvidiacash-qt %u
+Terminal=false
+Type=Application
+Icon=nvidiacash128
+MimeType=x-scheme-handler/nvidiacash;
+Categories=Office;Finance;
